@@ -18,6 +18,10 @@ public class ImagePallette {
         self.context = CIContext(options: [.useSoftwareRenderer: false])
     }
 
+    deinit {
+        self.context.clearCaches()
+    }
+
     public func getCIImageOutput(cgImage: CGImage) -> CIImage? {
         let ciImage = CIImage(cgImage: cgImage)
 

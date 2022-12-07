@@ -18,7 +18,7 @@ extension ImagePallette {
 
     public static func computePrimaryCGColor(forImagedNamed imageName: String) -> CGColor? {
         if let cgImage = UIImage(named: imageName)?.cgImage {
-            if let outputCIImage = ImagePallette.shared.getCIImageOutput(cgImage: cgImage), let outputCGImage = ImagePallette.shared.convertCIImageToCGImage(inputImage: outputCIImage) {
+            if let outputCIImage = ImagePallette().getCIImageOutput(cgImage: cgImage), let outputCGImage = ImagePallette.shared.convertCIImageToCGImage(inputImage: outputCIImage) {
                 return outputCGImage[0, 0]
             }
         }
